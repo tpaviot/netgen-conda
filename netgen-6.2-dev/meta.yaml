@@ -4,6 +4,10 @@
 
 source:
   git_url: https://github.com/live-clones/netgen.git
+  patches:
+    - netgen-patch.patch
+    - remove_warnings.patch
+    - fix_occvis.patch  [osx]
 
 build:
   detect_binary_files_with_prefix: True
@@ -19,11 +23,13 @@ requirements:
     - ninja
     - cmake
     - oce ==0.17.2
+    - gcc-5 ==5.4.0     [linux or osx]
+    - binutils ==2.26   [linux]
 
   run:
     - oce ==0.17.2
 
 about:
-  home: https://github.com/tpaviot/oce
-  license: LGPL
-  summary: OpenCASCADE community edition
+  home: https://sourceforge.net/projects/netgen-mesher/
+  license: LGPLv2
+  summary: NETGEN is an automatic 3d tetrahedral mesh generator.

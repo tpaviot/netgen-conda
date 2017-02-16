@@ -1,0 +1,30 @@
+diff --git a/nglib/CMakeLists.txt b/nglib/CMakeLists.txt
+index eb18a63..6ddef05 100644
+--- a/nglib/CMakeLists.txt
++++ b/nglib/CMakeLists.txt
+@@ -3,9 +3,9 @@ add_definitions(-DNGLIB_EXPORTS)
+ if(WIN32)
+     set(nglib_objects 
+           $<TARGET_OBJECTS:mesh>
+-          $<TARGET_OBJECTS:stlvis>
++          #$<TARGET_OBJECTS:stlvis>
+           $<TARGET_OBJECTS:stl>
+-          $<TARGET_OBJECTS:geom2dvis>
++          #$<TARGET_OBJECTS:geom2dvis>
+           $<TARGET_OBJECTS:interface>
+           $<TARGET_OBJECTS:geom2d>
+           $<TARGET_OBJECTS:csg>
+@@ -15,7 +15,7 @@ if(WIN32)
+           $<TARGET_OBJECTS:gprim>
+ 
+           $<TARGET_OBJECTS:visual>
+-          $<TARGET_OBJECTS:csgvis>
++          #$<TARGET_OBJECTS:csgvis>
+           $<TARGET_OBJECTS:occ>
+        )
+ endif(WIN32)
+@@ -51,3 +51,4 @@ endif(USE_PYTHON)
+ # endif(NOT WIN32)
+ 
+ install(TARGETS nglib ${ng_install_dir})
++install(FILES nglib.h DESTINATION ${INCDIR} COMPONENT netgen_devel) 

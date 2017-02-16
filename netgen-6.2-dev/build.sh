@@ -10,11 +10,13 @@ cmake -G Ninja -DCMAKE_INSTALL_PREFIX=$PREFIX \
  -DUSE_PYTHON=OFF \
  -DUSE_GUI=OFF \
  -DUSE_OCC=ON \
+ -DUSE_GUI=OFF \
+ -DUSE_SUPERBUILD=OFF \
+ -DOCC_INCLUDE_DIR=$PREFIX/include/oce \
  ..
 
 # Build step
-ninja
+ninja -j 3
 
-#fi
 # Install step
 ninja install

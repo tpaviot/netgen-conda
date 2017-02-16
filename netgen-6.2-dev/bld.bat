@@ -8,6 +8,8 @@ cmake -G "Ninja" -DINSTALL_DIR="%LIBRARY_PREFIX%" ^
  -DUSE_OCC=ON ^
  -DUSE_PYTHON=OFF ^
  -DUSE_GUI=OFF ^
+ -DUSE_SUPERBUILD=OFF ^
+ -DOCC_INCLUDE_DIR="%LIBRARY_PREFIX%"/include/oce ^
 ..
 if errorlevel 1 exit 1
  
