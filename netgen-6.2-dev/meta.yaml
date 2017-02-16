@@ -1,0 +1,29 @@
+﻿package:
+  name: netgen
+  version: 6.2.dev
+
+source:
+  git_url: https://github.com/live-clones/netgen.git
+
+build:
+  detect_binary_files_with_prefix: True
+  number: 1
+  features:
+    - vc9               [win and py27]
+    - vc10              [win and py34]
+    - vc14              [win and py35]
+
+requirements:
+  build:
+    - patch             [win]
+    - ninja
+    - cmake
+    - oce ==0.17.2
+
+  run:
+    - oce ==0.17.2
+
+about:
+  home: https://github.com/tpaviot/oce
+  license: LGPL
+  summary: OpenCASCADE community edition
