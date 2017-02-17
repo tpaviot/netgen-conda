@@ -7,6 +7,7 @@ source:
   patches:
     - netgen-patch.patch
     - remove_warnings.patch
+    - fix_mystdlib_h.patch
     - fix_occvis.patch  [osx]
 
 build:
