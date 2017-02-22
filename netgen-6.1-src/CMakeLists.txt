@@ -132,7 +132,7 @@ if(WIN32)
     add_definitions(-DMSVC_EXPRESS -D_CRT_SECURE_NO_WARNINGS -DHAVE_STRUCT_TIMESPEC)
     # build convenience (aka object) libraries in windows)
     set(NG_LIB_TYPE OBJECT)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP /wd4244 /wd4800")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP /wd4244 /wd4800 /wd4251 /wd4275")
 else(WIN32)
     # build shared libraries
     set(NG_LIB_TYPE SHARED)
