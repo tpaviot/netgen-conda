@@ -3,7 +3,7 @@ add_definitions(-DNGLIB_EXPORTS)
 if(WIN32)
     set(nglib_objects 
           $<TARGET_OBJECTS:mesh>
-          $<TARGET_OBJECTS:stlvis>
+          #$<TARGET_OBJECTS:stlvis>
           $<TARGET_OBJECTS:stl>
           $<TARGET_OBJECTS:geom2dvis>
           $<TARGET_OBJECTS:interface>
@@ -15,7 +15,7 @@ if(WIN32)
           $<TARGET_OBJECTS:gprim>
 
           $<TARGET_OBJECTS:visual>
-          $<TARGET_OBJECTS:csgvis>
+          #$<TARGET_OBJECTS:csgvis>
           $<TARGET_OBJECTS:occ>
        )
 endif(WIN32)
@@ -47,4 +47,4 @@ endif(USE_PYTHON)
 #     install(TARGETS nglib ng_vol ng_stl ${ng_install_dir})
 # endif(NOT WIN32)
 
-install(TARGETS nglib ${ng_install_dir})
+install(TARGETS nglib DESTINATION ${ng_install_dir})
