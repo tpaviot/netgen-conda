@@ -3,13 +3,7 @@
   version: 6.1
 
 source:
-  url: https://sourceforge.net/code-snapshots/git/n/ne/netgen-mesher/git.git/netgen-mesher-git-5ee918f3e2dce99a6d1afbe3f7e7ae59f501c9d4.zip
-  patches:
-    - netgen-patch.patch
-    - remove_warnings.patch
-    - fix_mystdlib_h.patch
-    - fix_occvis.patch      [osx]
-    - fix-element2d.patch   [win]
+  path: ../netgen-6.1-src
 
 build:
   detect_binary_files_with_prefix: True
