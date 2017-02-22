@@ -18,6 +18,17 @@ if(USE_GUI)
         set_target_properties(netgen PROPERTIES OUTPUT_NAME netgen)
     endif(APPLE)
 
+
+install(FILES
+    dialog.tcl menustat.tcl ngicon.tcl ng.tcl   
+    ngvisual.tcl sockets.tcl nghelp.tcl ngshell.tcl   
+    ngtesting.tcl parameters.tcl variables.tcl csgeom.tcl stlgeom.tcl 
+    occgeom.tcl acisgeom.tcl netgen.ocf
+    DESTINATION ${ng_install_dir_bin} COMPONENT netgen)
+
+add_subdirectory(Togl2.1)
+install(FILES drawing.tcl DESTINATION ${ng_install_dir_bin} COMPONENT netgen)
+
 endif(USE_GUI)
 
 if(USE_PYTHON)
@@ -31,14 +42,3 @@ if(USE_PYTHON)
     endif()
     install(TARGETS ngpy ${ng_install_dir})
 endif(USE_PYTHON)
-
-install(FILES
-    dialog.tcl menustat.tcl ngicon.tcl ng.tcl	
-    ngvisual.tcl sockets.tcl nghelp.tcl ngshell.tcl	  
-    ngtesting.tcl parameters.tcl variables.tcl csgeom.tcl stlgeom.tcl 
-    occgeom.tcl acisgeom.tcl netgen.ocf
-    DESTINATION ${ng_install_dir_bin} COMPONENT netgen)
-
-add_subdirectory(Togl2.1)
-install(FILES drawing.tcl DESTINATION ${ng_install_dir_bin} COMPONENT netgen)
-
