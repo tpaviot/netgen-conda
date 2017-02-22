@@ -1,4 +1,3 @@
-cd netgen-mesher-git-5ee918f3e2dce99a6d1afbe3f7e7ae59f501c9d4
 mkdir build
 cd build
 REM Configure step
