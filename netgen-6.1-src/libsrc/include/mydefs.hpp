@@ -20,7 +20,9 @@
 // in the configure/make phases, with the 
 // right version number
 #ifdef WIN32
-#define PACKAGE_VERSION "6.1.0"
+#ifndef PACKAGE_VERSION
+  #define PACKAGE_VERSION "6.1.0"
+#endif
 #endif
 
 
