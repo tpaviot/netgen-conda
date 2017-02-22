@@ -5,7 +5,7 @@ if(WIN32)
           $<TARGET_OBJECTS:mesh>
           #$<TARGET_OBJECTS:stlvis>
           $<TARGET_OBJECTS:stl>
-          $<TARGET_OBJECTS:geom2dvis>
+          #$<TARGET_OBJECTS:geom2dvis>
           $<TARGET_OBJECTS:interface>
           $<TARGET_OBJECTS:geom2d>
           $<TARGET_OBJECTS:csg>
