@@ -230,13 +230,19 @@ endif (USE_MPI)
 #######################################################################
 if (USE_OCC)
     find_package(OpenCasCade REQUIRED)
-    add_definitions(-DOCCGEOMETRY -D_OCC64)
     include_directories(${OCC_INCLUDE_DIR})
+    # 32/64 bit detection
+    if(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
+        # If in 64bit mode, we have to define the _OCC64 variable
+        add_definitions(-D_OCC64)
+        message(STATUS "Build 64 bit")
+    endif(${CMAKE_SIZEOF_VOID_P} MATCHES "8")
     if(WIN32)
         install( DIRECTORY "${OCC_LIBRARY_DIR}/../bin" DESTINATION . COMPONENT netgen )
         install( FILES ${OCC_LIBRARIES_BIN} DESTINATION bin COMPONENT netgen )
     endif(WIN32)
 endif (USE_OCC)
+
 
 #######################################################################
 if (USE_JPEG)
